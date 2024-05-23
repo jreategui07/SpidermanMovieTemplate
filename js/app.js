@@ -6,10 +6,12 @@ const loadFilms = () => {
         document.querySelector("#films-list").innerHTML += `
             <li>
                 <img src="${ item.image_url }"/>
-                Name: ${ item.name }
-                Description: ${ item.description }
-                Date: ${ item.date }
-                Location: ${ item.location }
+                <div>
+                    <a>Name: <strong>${ item.name }</strong></a>
+                    <a>Description: <strong>${ item.description }</strong></a>
+                    <a>Date: <strong>${ item.date }</strong></a>
+                    <a>Location: <strong>${ item.location }</strong></a>
+                </div>
             </li>
         `;
     }
@@ -20,13 +22,25 @@ const loadticketsAndPricing = () => {
         const item = ticketsAndPricingData[i];
         const liNode = document.createElement("li")
         liNode.innerHTML = item
-        document.querySelector("#tickets-and-pricing-list").innerHTML += `
+
+        let itemDetailsHtml = ""
+        for (let z = 0; z < item.details.length; z++) {
+            const detail = item.details[z];
+            itemDetailsHtml += `
+                <a>
+                    <i class="bi bi-star-half bi-small"></i>
+                    ${ detail }
+                </a>
+            `
+        }
+
+        document.querySelector("#pricing-list").innerHTML += `
             <li>
-                <i class="bi ${ item.icon }"></i>
-                Name: ${ item.name }
-                Date: ${ item.date }
-                Location: ${ item.location }
-                <button onclick="window.location.href='purchase-ticket.html'">${item.button_text}</button>
+                <i class="ticket-icon bi ${ item.icon }"></i>
+                <a class="ticket-name">${ item.name }</a>
+                <a class="ticket-price">${ item.price }</a>
+                <div>${ itemDetailsHtml }</div>
+                <button class="btn-primary" onclick="window.location.href='purchase-ticket.html'">${item.button_text}</button>
             </li>
         `;
     }
@@ -40,16 +54,14 @@ const loadArtistDetails = () => {
         document.querySelector("#artist-list").innerHTML += `
             <li>
                 <img src="${ item.image_url }"/>
-                <div class="flex-column">
-                    <ul>
-                        <li>Artist: ${ item.artist }</li>
-                        <li>Date: ${ item.date }</li>
-                        <li>Location: ${ item.location }</li>
-                        <li>Show Time: ${ item.show_time }</li>
-                        <li>Tickets Status: ${ item.tickets_status }</li>
-                        <li>Location: ${ item.location }</li>
-                        <button href="#">${ item.button_text }</button>
-                    </ul>
+                <div>
+                    <a>Artist: <strong>${ item.artist }</strong></a>
+                    <a>Date: <strong>${ item.date }</strong></a>
+                    <a>Location: <strong>${ item.location }</strong></a>
+                    <a>Show Time: <strong>${ item.show_time }</strong></a>
+                    <a>Tickets Status: <strong>${ item.tickets_status }</strong></a>
+                    <a>Location: <strong>${ item.location }</strong></a>
+                    <button class="btn-secondary" onclick="window.location.href='purchase-ticket.html'">${ item.button_text }</button>
                 </div>
             </li>
         `;

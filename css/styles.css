@@ -1,7 +1,7 @@
 * {
     font-family: "Montserrat", sans-serif;
     font-weight: 200;
-    color: white;
+    color: lightgray;
 }
 
 h1 {
@@ -9,11 +9,18 @@ h1 {
 }
 
 button {
-    background-color: red;
     padding: 10px;
     cursor: pointer;
     border-radius: 10px;
     font-weight: bold;
+}
+
+.btn-primary {
+    background-color: red;
+}
+
+.btn-secondary {
+    background-color: black;
 }
 
 body {
@@ -35,9 +42,25 @@ ul {
     list-style: none;
 }
 
-/*
-    menu styles
-*/
+strong {
+    font-weight: 400;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    text-align: center;
+    border: 3px dotted red;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 30%;
+    margin-right: 30%;
+    
+}
+
+/* menu */
 
 #menu {
     background-color: red;
@@ -63,9 +86,7 @@ ul {
     cursor: pointer;
 }
 
-/*
-    wallpaper-container styles
-*/
+/* wallpaper-container */
 
 #wallpaper-container {
     background-image: url('../img/spider-man-no-way-home-wallpaper.jpg');
@@ -75,9 +96,7 @@ ul {
     background-repeat: no-repeat;
 }
 
-/*
-    footer styles
-*/
+/* footer */
 
 footer {
     display: flex;
@@ -101,44 +120,6 @@ footer .bi {
 .flex-column {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    gap: 15px;
-    padding: 0;
-    margin: 10px;
-}
-
-#artist-list li {
-    display: flex;
-    flex-direction: row;
-    gap: 0px;
-    border: 3px dotted red;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: left;
-    margin-left: 20%;
-    margin-right: 20%;
-}
-
-#artist-list div {
-    width: 50%;
-}
-
-#artist-list img {
-    width: 50%;
-}
-
-.form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: center;
-    text-align: center;
-    border: 3px dotted red;
-    border-radius: 10px;
-    padding: 10px;
-    margin-left: 30%;
-    margin-right: 30%;
-    
 }
 
 /* flex-row */
@@ -149,18 +130,95 @@ footer .bi {
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-    padding: 0;
 }
 
-.flex-row li {
-    width: 300px;
+/* films-list */
+
+#films-list > li {
     display: flex;
     flex-direction: column;
-    gap: 0px;
-    border: 3px dotted red;
-    padding: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 300px;
+    background-color: red;
     border-radius: 10px;
     text-align: left;
+}
+
+#films-list > li > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 10px;
+}
+
+/* pricing-list */
+
+#pricing-list > li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: 2px solid red;
+    padding: 50px;
+    border-radius: 10px;
+    text-align: center;
+    gap: 20px;
+}
+
+.ticket-icon {
+    font-size: 80px;
+}
+
+.ticket-name {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.ticket-price {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+#pricing-list > li > div {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.bi-small {
+    font-size: 18px;
+}
+
+/* artist-list */
+
+#artist-list > li {
+    display: flex;
+    flex-direction: row;
+    background-color: red;
+    margin: 10px;
+    text-align: left;
+    border-radius: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#artist-list > li > img {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 50%;
+}
+
+#artist-list > li > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    gap: 10px;
 }
 
 .flex-row .bi {
@@ -170,5 +228,10 @@ footer .bi {
 img {
     width: 300px;
     height: 450px;
-    border-radius: 10px;
+}
+
+.container {
+    text-align: center;
+    padding: 0;
+    margin: 10px;
 }
