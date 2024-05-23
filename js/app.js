@@ -40,7 +40,7 @@ const loadArtistDetails = () => {
         document.querySelector("#artist-list").innerHTML += `
             <li>
                 <img src="${ item.image_url }"/>
-                <div class="column-container">
+                <div class="flex-column">
                     <ul>
                         <li>Artist: ${ item.artist }</li>
                         <li>Date: ${ item.date }</li>
