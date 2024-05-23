@@ -1,5 +1,6 @@
 let ticketsAndPricingData = [
     {
+        "code": "ODP",
         "icon": "bi-ticket-perforated-fill",
         "name": "One Day Pass",
         "price": "$95",
@@ -10,6 +11,7 @@ let ticketsAndPricingData = [
         "button_text": "BUY TICKETS"
     },
     {
+        "code": "AAP",
         "icon": "bi-film",
         "name": "All Access Pass",
         "price": "$274",
