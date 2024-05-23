@@ -3,7 +3,7 @@ let artistDetails = [
         "artist": "Hozier",
         "date": "Wednesday, September 20, 2023",
         "location": "Place Bell, Laval",
-        "show_time": "Show: 8:00 PM",
+        "show_time": "8:00 PM",
         "tickets_status": "TICKETS ON SALE NOW!",
         "button_text": "BUY TICKETS",
         "image_url": "../img/spiderman-artist.jpg"
@@ -12,7 +12,7 @@ let artistDetails = [
         "artist": "Hozier",
         "date": "Wednesday, September 20, 2023",
         "location": "Place Bell, Laval",
-        "show_time": "Show: 8:00 PM",
+        "show_time": "8:00 PM",
         "tickets_status": "TICKETS ON SALE NOW!",
         "button_text": "BUY TICKETS",
         "image_url": "../img/spiderman-artist.jpg"
@@ -21,7 +21,7 @@ let artistDetails = [
         "artist": "Hozier",
         "date": "Wednesday, September 20, 2023",
         "location": "Place Bell, Laval",
-        "show_time": "Show: 8:00 PM",
+        "show_time": "8:00 PM",
         "tickets_status": "TICKETS ON SALE NOW!",
         "button_text": "BUY TICKETS",
         "image_url": "../img/spiderman-artist.jpg"

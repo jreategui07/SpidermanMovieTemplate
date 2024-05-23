@@ -63,21 +63,24 @@ const btnOrderSummary = () => {
     document.querySelector("#orderSummary").style.display = "flex";
     
     let ticketPrice = 35.99
-
     if (ticketType === "ODP") {
         ticketPrice = 95.00
     } else if (ticketType === "ODP") {
         ticketPrice = 274.00
     }
 
-    let totalPrice = numberTicktes * ticketPrice
+    let subtotal = ticketPrice * parseFloat(numberTicktes)
+    let tax = subtotal * 0.13
+    let finalPrice = subtotal + tax
 
     // calculate receipt
     document.querySelector("#order-summary-list").innerHTML += `
             <a>Ticket type: <strong>${ ticketType }</strong></a>
             <a>Number of tickets: <strong>${ numberTicktes }</strong></a>
-            <a>Credit card: <strong>${ creditCard }</strong></a>
-            <a>Total amount: <strong>$${ totalPrice.toFixed(2) }</strong></a>
+            <a>Price per ticket: <strong>$${ ticketPrice.toFixed(2) }</strong></a>
+            <a>Subtotal: <strong>$${ subtotal.toFixed(2) }</strong></a>
+            <a>Tax (13%): <strong>$${ tax.toFixed(2) }</strong></a>
+            <a>Final Price: <strong>$${ finalPrice.toFixed(2) }</strong></a>
             <button class="btn-primary" id="btn-pay">Confirm and pay</button>
     `;
     
