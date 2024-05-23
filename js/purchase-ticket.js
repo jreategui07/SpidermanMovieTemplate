@@ -35,6 +35,7 @@ const cleanForm = () => {
     document.querySelector("#txt-number-ticktes").value = ""
     document.querySelector("#txt-credit-card").value = ""
     document.querySelector("#order-summary-list").innerHTML = ""
+    document.querySelector("#orderSummary").style.display = "none";
 }
 
 const buyTickts = () => {
@@ -59,6 +60,8 @@ const btnOrderSummary = () => {
         return
     }
 
+    document.querySelector("#orderSummary").style.display = "flex";
+    
     let ticketPrice = 35.99
 
     if (ticketType === "ODP") {
@@ -97,6 +100,7 @@ const btnPayPressed = () => {
 
 document.addEventListener('DOMContentLoaded', function() {
     loadSelectTicketOption()
+    document.querySelector("#orderSummary").style.display = "none";
 });
 
 document.querySelector("#btn-order-summary").addEventListener("click", btnOrderSummary)
