@@ -1,0 +1,175 @@
+* {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 200;
+    color: white;
+}
+
+h1 {
+    font-family: "Jersey 15", sans-serif;
+}
+
+button {
+    background-color: red;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+body {
+    margin: 0;
+    background-color: black;
+}
+
+.bi {
+    color: red;
+    font-size: 70px;
+}
+
+select, input {
+    color: gray;
+    height: 40px;
+}
+
+li {
+    list-style: none;
+}
+
+/*
+    menu styles
+*/
+
+#menu {
+    background-color: red;
+}
+
+#menu>ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style-type: none;
+    height: 60px;
+    align-items: center;
+    margin: 0;
+}
+
+#menu>ul>li>a {
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#menu>ul>li>a:hover {
+    color: lightgray;
+    cursor: pointer;
+}
+
+/*
+    wallpaper-container styles
+*/
+
+#wallpaper-container {
+    background-image: url('../img/spider-man-no-way-home-wallpaper.jpg');
+    height:550px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*
+    footer styles
+*/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 45px;
+}
+
+footer div {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+footer .bi {
+    font-size: 35px;
+}
+
+/* column-container */
+
+.column-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    padding: 0;
+    margin: 10px;
+}
+
+#artist-list li {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    border: 3px dotted red;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: left;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#artist-list div {
+    width: 50%;
+}
+
+#artist-list img {
+    width: 50%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    text-align: center;
+    border: 3px dotted red;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 30%;
+    margin-right: 30%;
+    
+}
+
+/* row-container */
+
+.row-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0;
+}
+
+.row-container li {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    border: 3px dotted red;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.row-container .bi {
+    text-align: center;
+}
+
+img {
+    width: 300px;
+    height: 450px;
+    border-radius: 10px;
+}
