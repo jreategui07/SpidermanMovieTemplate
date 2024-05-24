@@ -2,14 +2,17 @@ const TICKETS_PRICE = [
     {
         "code": "ODP",
         "name": "One Day Pass",
-        "price": "$95"
+        "price": 95
     },
     {
         "code": "AAP",
         "name": "All Access Pass",
-        "price": "$274"
+        "price": 274
     }
 ]
+
+const TAX_RATE = 0.13
+const NUMBER_OF_DECIMALS = 2
 
 const cleanForm = () => {
     document.querySelector("#select-ticket-type").value = ""
@@ -26,6 +29,7 @@ const buyTickts = () => {
 const btnOrderSummary = () => {
     document.querySelector("#order-summary-list").innerHTML = ""
 
+    // validations of data
     const FORM_DATA = {
         ticketType: document.querySelector("#select-ticket-type").value,
         numberTicktes: document.querySelector("#txt-number-ticktes").value,
@@ -46,26 +50,25 @@ const btnOrderSummary = () => {
         return
     }
 
-    document.querySelector("#orderSummary").style.display = "flex";
-    
-    let ticketPrice = 35.99
-    if (FORM_DATA.ticketType === "ODP") {
-        ticketPrice = 95.00
-    } else if (FORM_DATA.ticketType === "ODP") {
-        ticketPrice = 274.00
+    // proccess order summary
+    let ticketPrice = 0
+    for (let i = 0; i < TICKETS_PRICE.length; i++) {
+        if (TICKETS_PRICE[i].code === FORM_DATA.ticketType) {
+            ticketPrice = TICKETS_PRICE[i].price
+        }
     }
 
     let subtotal = ticketPrice * parseFloat(FORM_DATA.numberTicktes)
-    let tax = subtotal * 0.13
+    let tax = subtotal * TAX_RATE
     let finalPrice = subtotal + tax
 
     const ORDER_SUMMARY = {
         ticketType: FORM_DATA.ticketType,
         numberTicktes: FORM_DATA.numberTicktes,
-        ticketPrice: ticketPrice.toFixed(2),
-        subtotal: subtotal.toFixed(2),
-        tax: tax.toFixed(2),
-        finalPrice: finalPrice.toFixed(2)
+        ticketPrice: ticketPrice.toFixed(NUMBER_OF_DECIMALS),
+        subtotal: subtotal.toFixed(NUMBER_OF_DECIMALS),
+        tax: tax.toFixed(NUMBER_OF_DECIMALS),
+        finalPrice: finalPrice.toFixed(NUMBER_OF_DECIMALS)
     }
 
     // calculate receipt
@@ -79,6 +82,7 @@ const btnOrderSummary = () => {
             <button class="btn-primary" id="btn-pay">Confirm and pay</button>
     `;
     
+    document.querySelector("#orderSummary").style.display = "flex";
     document.querySelector("#btn-pay").addEventListener("click", btnPayPressed)
 }
 
