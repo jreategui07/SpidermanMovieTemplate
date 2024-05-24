@@ -1,4 +1,4 @@
-const TICKETS_TYPE = [
+const SUBCRIPTIONS_TYPE = [
     {
         "code": "ODP",
         "icon": "bi-ticket-perforated-fill",
@@ -25,8 +25,8 @@ const TICKETS_TYPE = [
 
 
 const loadticketsAndPricing = () => {
-    for (let i = 0; i < TICKETS_TYPE.length; i++) {
-        const item = TICKETS_TYPE[i];
+    for (let i = 0; i < SUBCRIPTIONS_TYPE.length; i++) {
+        const item = SUBCRIPTIONS_TYPE[i];
         const liNode = document.createElement("li")
         liNode.innerHTML = item
 
