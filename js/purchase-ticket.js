@@ -1,4 +1,4 @@
-const TICKETS_PRICE = [
+const PLANS_PRICE = [
     {
         "code": "ODP",
         "name": "One Day Pass",
@@ -16,15 +16,11 @@ const NUMBER_OF_DECIMALS = 2
 
 const resetValues = () => {
     localStorage.removeItem("ORDER_SUMMARY_IN_PROGRESS")
-    document.querySelector("#select-ticket-type").value = ""
-    document.querySelector("#txt-number-ticktes").value = ""
+    document.querySelector("#select-plan-type").value = ""
+    document.querySelector("#txt-number-users").value = ""
     document.querySelector("#txt-credit-card").value = ""
     document.querySelector("#order-summary-list").innerHTML = ""
     document.querySelector("#orderSummary").style.display = "none";
-}
-
-const buyTickts = () => {
-    alert("SUCCESS: Transaction done")
 }
 
 const btnOrderSummary = () => {
@@ -32,41 +28,44 @@ const btnOrderSummary = () => {
 
     // validations of data
     const FORM_DATA = {
-        ticketType: document.querySelector("#select-ticket-type").value,
-        numberTicktes: document.querySelector("#txt-number-ticktes").value,
+        planType: document.querySelector("#select-plan-type").value,
+        numberUsers: document.querySelector("#txt-number-users").value,
         creditCard: document.querySelector("#txt-credit-card").value
     }
 
     if (
-        FORM_DATA.ticketType.trim() === "" ||
-        FORM_DATA.numberTicktes.trim() === "" ||
+        FORM_DATA.planType.trim() === "" ||
+        FORM_DATA.numberUsers.trim() === "" ||
         FORM_DATA.creditCard.trim() === ""
     ) {
-        alert("WARNING: Should provide ticket type, number of tickets hours credit card information")
+        alert("WARNING: Should select plan type and provide number of users and credit card information")
         return
     }
 
-    if (FORM_DATA.creditCard.length != 6) {
-        alert("WARNING: CreditCard Should contain 6 digits");
+    if (
+        FORM_DATA.creditCard.length != 6 ||
+        isNaN(FORM_DATA.creditCard)
+    ) {
+        alert("WARNING: Credit card should contain 6 numbers");
         return
     }
 
     // proccess order summary
-    let ticketPrice = 0
-    for (let i = 0; i < TICKETS_PRICE.length; i++) {
-        if (TICKETS_PRICE[i].code === FORM_DATA.ticketType) {
-            ticketPrice = TICKETS_PRICE[i].price
+    let userPrice = 0
+    for (let i = 0; i < PLANS_PRICE.length; i++) {
+        if (PLANS_PRICE[i].code === FORM_DATA.planType) {
+            userPrice = PLANS_PRICE[i].price
         }
     }
 
-    let subtotal = ticketPrice * parseFloat(FORM_DATA.numberTicktes)
+    let subtotal = userPrice * parseFloat(FORM_DATA.numberUsers)
     let tax = subtotal * TAX_RATE
     let finalPrice = subtotal + tax
 
     const ORDER_SUMMARY = {
-        ticketType: FORM_DATA.ticketType,
-        numberTicktes: FORM_DATA.numberTicktes,
-        ticketPrice: ticketPrice.toFixed(NUMBER_OF_DECIMALS),
+        planType: FORM_DATA.planType,
+        numberUsers: FORM_DATA.numberUsers,
+        userPrice: userPrice.toFixed(NUMBER_OF_DECIMALS),
         subtotal: subtotal.toFixed(NUMBER_OF_DECIMALS),
         tax: tax.toFixed(NUMBER_OF_DECIMALS),
         finalPrice: finalPrice.toFixed(NUMBER_OF_DECIMALS),
@@ -79,14 +78,14 @@ const btnOrderSummary = () => {
 
 const showOrderSummary = (ORDER_SUMMARY) => {
     document.querySelector("#order-summary-list").innerHTML += `
-        <a>Ticket type: <strong>${ ORDER_SUMMARY.ticketType }</strong></a>
-        <a>Number of tickets: <strong>${ ORDER_SUMMARY.numberTicktes }</strong></a>
-        <a>Price per ticket: <strong>$${ ORDER_SUMMARY.ticketPrice }</strong></a>
+        <a>Plan type: <strong>${ ORDER_SUMMARY.planType }</strong></a>
+        <a>Number of users: <strong>${ ORDER_SUMMARY.numberUsers }</strong></a>
+        <a>Price per user: <strong>$${ ORDER_SUMMARY.userPrice }</strong></a>
         <a>Subtotal: <strong>$${ ORDER_SUMMARY.subtotal }</strong></a>
         <a>Tax (13%): <strong>$${ ORDER_SUMMARY.tax }</strong></a>
         <a>Final Price: <strong>$${ ORDER_SUMMARY.finalPrice }</strong></a>
-        <button class="btn-primary" id="btn-pay">Confirm and pay</button>
-        <button class="btn-primary" id="btn-reset">Reset</button>
+        <button class="btn-primary" id="btn-pay">Confirm and purchase</button>
+        <button class="btn-primary" id="btn-reset">Cancel</button>
     `;
     document.querySelector("#orderSummary").style.display = "flex";
     document.querySelector("#btn-pay").addEventListener("click", btnPayPressed)
@@ -94,15 +93,15 @@ const showOrderSummary = (ORDER_SUMMARY) => {
 }
 
 const resumeForm = (ORDER_SUMMARY) => {
-    document.querySelector("#select-ticket-type").value = ORDER_SUMMARY.ticketType
-    document.querySelector("#txt-number-ticktes").value = ORDER_SUMMARY.numberTicktes
+    document.querySelector("#select-plan-type").value = ORDER_SUMMARY.planType
+    document.querySelector("#txt-number-users").value = ORDER_SUMMARY.numberUsers
     document.querySelector("#txt-credit-card").value = ORDER_SUMMARY.creditCard
 }
 
-const loadSelectTicketOption = () => {
-    for (let i = 0; i < TICKETS_PRICE.length; i++) {
-        const item = TICKETS_PRICE[i];
-        document.querySelector("#select-ticket-type").innerHTML += `
+const loadSelectOption = () => {
+    for (let i = 0; i < PLANS_PRICE.length; i++) {
+        const item = PLANS_PRICE[i];
+        document.querySelector("#select-plan-type").innerHTML += `
             <option value="${ item.code }">${ item.name }</option>
         `
     }
@@ -118,7 +117,7 @@ const btnResetPressed = () => {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    loadSelectTicketOption()
+    loadSelectOption()
     document.querySelector("#orderSummary").style.display = "none";
     const ORDER_SUMMARY_IN_PROGRESS = JSON.parse(localStorage.getItem("ORDER_SUMMARY_IN_PROGRESS"))
     if (ORDER_SUMMARY_IN_PROGRESS !== null) {
