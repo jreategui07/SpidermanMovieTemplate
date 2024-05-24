@@ -47,7 +47,7 @@ const loadticketsAndPricing = () => {
                 <a class="ticket-name">${ item.name }</a>
                 <a class="ticket-price">${ item.price }</a>
                 <div>${ itemDetailsHtml }</div>
-                <button class="btn-primary" onclick="window.location.href='purchase-ticket.html'">${item.button_text}</button>
+                <button class="btn-primary" onclick="window.location.href='purchase-plan.html'">${item.button_text}</button>
             </li>
         `;
     }

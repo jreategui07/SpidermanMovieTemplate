@@ -43,7 +43,7 @@ const loadArtistDetails = () => {
                     <a>Show Time: <strong>${ item.show_time }</strong></a>
                     <a>Movie Status: <strong>${ item.movie_status }</strong></a>
                     <a>Location: <strong>${ item.location }</strong></a>
-                    <button class="btn-secondary" onclick="window.location.href='purchase-ticket.html'">${ item.button_text }</button>
+                    <button class="btn-secondary" onclick="window.location.href='purchase-plan.html'">${ item.button_text }</button>
                 </div>
             </li>
         `;
