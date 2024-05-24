@@ -1,28 +1,13 @@
-const TICKETS_TYPE = [
+const TICKETS_PRICE = [
     {
         "code": "ODP",
-        "icon": "bi-ticket-perforated-fill",
         "name": "One Day Pass",
-        "price": "$95",
-        "details": [
-            "Access to every performance on 1 day",
-            "7% off all snacks and drinks"
-        ],
-        "button_text": "BUY TICKETS"
+        "price": "$95"
     },
     {
         "code": "AAP",
-        "icon": "bi-film",
         "name": "All Access Pass",
-        "price": "$274",
-        "details": [
-            "Unlimited access to every performance",
-            "Valid for entry on all festival days",
-            "Skip the line with fast entry",
-            "15% off all snacks and drinks",
-            "Exclusive backstage meet and greets"
-        ],
-        "button_text": "BUY TICKETS"
+        "price": "$274"
     }
 ]
 
@@ -88,8 +73,8 @@ const btnOrderSummary = () => {
 }
 
 const loadSelectTicketOption = () => {
-    for (let i = 0; i < TICKETS_TYPE.length; i++) {
-        const item = TICKETS_TYPE[i];
+    for (let i = 0; i < TICKETS_PRICE.length; i++) {
+        const item = TICKETS_PRICE[i];
         document.querySelector("#select-ticket-type").innerHTML += `
             <option value="${ item.code }">${ item.name }</option>
         `
