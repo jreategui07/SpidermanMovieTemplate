@@ -1,4 +1,4 @@
-let ticketsAndPricingData = [
+const TICKETS_TYPE = [
     {
         "code": "ODP",
         "icon": "bi-ticket-perforated-fill",
@@ -28,8 +28,8 @@ let ticketsAndPricingData = [
 
 
 const loadticketsAndPricing = () => {
-    for (let i = 0; i < ticketsAndPricingData.length; i++) {
-        const item = ticketsAndPricingData[i];
+    for (let i = 0; i < TICKETS_TYPE.length; i++) {
+        const item = TICKETS_TYPE[i];
         const liNode = document.createElement("li")
         liNode.innerHTML = item
 

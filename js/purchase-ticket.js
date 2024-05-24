@@ -1,4 +1,4 @@
-let ticketsAndPricingData = [
+const TICKETS_TYPE = [
     {
         "code": "ODP",
         "icon": "bi-ticket-perforated-fill",
@@ -88,8 +88,8 @@ const btnOrderSummary = () => {
 }
 
 const loadSelectTicketOption = () => {
-    for (let i = 0; i < ticketsAndPricingData.length; i++) {
-        const item = ticketsAndPricingData[i];
+    for (let i = 0; i < TICKETS_TYPE.length; i++) {
+        const item = TICKETS_TYPE[i];
         document.querySelector("#select-ticket-type").innerHTML += `
             <option value="${ item.code }">${ item.name }</option>
         `

@@ -1,4 +1,4 @@
-let artistDetails = [
+const ARTISTS = [
     {
         "artist": "Hozier",
         "date": "Wednesday, September 20, 2023",
@@ -29,8 +29,8 @@ let artistDetails = [
 ]
 
 const loadArtistDetails = () => {
-    for (let i = 0; i < artistDetails.length; i++) {
-        const item = artistDetails[i];
+    for (let i = 0; i < ARTISTS.length; i++) {
+        const item = ARTISTS[i];
         const liNode = document.createElement("li")
         liNode.innerHTML = item
         document.querySelector("#artist-list").innerHTML += `

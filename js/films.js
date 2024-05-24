@@ -1,4 +1,4 @@
-const filmsData = [
+const FILMS = [
     {
         "name": "Hollywood Film Festival",
         "description": "A prestigious festival showcasing the best in international cinema.",
@@ -37,8 +37,8 @@ const filmsData = [
 ]
 
 const loadFilms = () => {
-    for (let i = 0; i < filmsData.length; i++) {
-        const item = filmsData[i];
+    for (let i = 0; i < FILMS.length; i++) {
+        const item = FILMS[i];
         const liNode = document.createElement("li")
         liNode.innerHTML = item
         document.querySelector("#films-list").innerHTML += `
