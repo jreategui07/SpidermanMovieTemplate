@@ -14,7 +14,8 @@ const TICKETS_PRICE = [
 const TAX_RATE = 0.13
 const NUMBER_OF_DECIMALS = 2
 
-const cleanForm = () => {
+const resetValues = () => {
+    localStorage.removeItem("ORDER_SUMMARY_IN_PROGRESS")
     document.querySelector("#select-ticket-type").value = ""
     document.querySelector("#txt-number-ticktes").value = ""
     document.querySelector("#txt-credit-card").value = ""
@@ -71,6 +72,8 @@ const btnOrderSummary = () => {
         finalPrice: finalPrice.toFixed(NUMBER_OF_DECIMALS)
     }
 
+    localStorage.setItem("ORDER_SUMMARY_IN_PROGRESS", JSON.stringify(ORDER_SUMMARY))
+
     // calculate receipt
     document.querySelector("#order-summary-list").innerHTML += `
             <a>Ticket type: <strong>${ ORDER_SUMMARY.ticketType }</strong></a>
@@ -80,10 +83,11 @@ const btnOrderSummary = () => {
             <a>Tax (13%): <strong>$${ ORDER_SUMMARY.tax }</strong></a>
             <a>Final Price: <strong>$${ ORDER_SUMMARY.finalPrice }</strong></a>
             <button class="btn-primary" id="btn-pay">Confirm and pay</button>
+            <button class="btn-primary" id="btn-reset">Reset</button>
     `;
-    
     document.querySelector("#orderSummary").style.display = "flex";
     document.querySelector("#btn-pay").addEventListener("click", btnPayPressed)
+    document.querySelector("#btn-reset").addEventListener("click", btnResetPressed)
 }
 
 const loadSelectTicketOption = () => {
@@ -97,12 +101,32 @@ const loadSelectTicketOption = () => {
 
 const btnPayPressed = () => {
     alert("SUCCESS: Payment successful")
-    cleanForm()
+    resetValues()
+}
+
+const btnResetPressed = () => {
+    resetValues()
 }
 
 document.addEventListener('DOMContentLoaded', function() {
     loadSelectTicketOption()
     document.querySelector("#orderSummary").style.display = "none";
+    const ORDER_SUMMARY_IN_PROGRESS = JSON.parse(localStorage.getItem("ORDER_SUMMARY_IN_PROGRESS"))
+    if (ORDER_SUMMARY_IN_PROGRESS !== null) {
+        document.querySelector("#order-summary-list").innerHTML += `
+            <a>Ticket type: <strong>${ ORDER_SUMMARY_IN_PROGRESS.ticketType }</strong></a>
+            <a>Number of tickets: <strong>${ ORDER_SUMMARY_IN_PROGRESS.numberTicktes }</strong></a>
+            <a>Price per ticket: <strong>$${ ORDER_SUMMARY_IN_PROGRESS.ticketPrice }</strong></a>
+            <a>Subtotal: <strong>$${ ORDER_SUMMARY_IN_PROGRESS.subtotal }</strong></a>
+            <a>Tax (13%): <strong>$${ ORDER_SUMMARY_IN_PROGRESS.tax }</strong></a>
+            <a>Final Price: <strong>$${ ORDER_SUMMARY_IN_PROGRESS.finalPrice }</strong></a>
+            <button class="btn-primary" id="btn-pay">Confirm and pay</button>
+            <button class="btn-primary" id="btn-reset">Reset</button>
+    `;
+    document.querySelector("#orderSummary").style.display = "flex";
+    document.querySelector("#btn-pay").addEventListener("click", btnPayPressed)
+    document.querySelector("#btn-reset").addEventListener("click", btnResetPressed)
+    }
 });
 
 document.querySelector("#btn-order-summary").addEventListener("click", btnOrderSummary)
