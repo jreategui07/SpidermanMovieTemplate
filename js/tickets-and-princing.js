@@ -3,26 +3,23 @@ const TICKETS_TYPE = [
         "code": "ODP",
         "icon": "bi-ticket-perforated-fill",
         "name": "One Day Pass",
-        "price": "$95",
+        "price": "$9.99",
         "details": [
-            "Access to every performance on 1 day",
-            "7% off all snacks and drinks"
+            "Access to every movie on 1 day",
+            "Full HD video streaming"
         ],
-        "button_text": "BUY TICKETS"
+        "button_text": "PURCHASE PLAN"
     },
     {
-        "code": "AAP",
+        "code": "MP",
         "icon": "bi-film",
-        "name": "All Access Pass",
-        "price": "$274",
+        "name": "Monthly Pass",
+        "price": "$29.99",
         "details": [
-            "Unlimited access to every performance",
-            "Valid for entry on all festival days",
-            "Skip the line with fast entry",
-            "15% off all snacks and drinks",
-            "Exclusive backstage meet and greets"
+            "Monthly access to every movie",
+            "Full HD video streaming"
         ],
-        "button_text": "BUY TICKETS"
+        "button_text": "PURCHASE PLAN"
     }
 ]
 

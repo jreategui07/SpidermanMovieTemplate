@@ -2,12 +2,12 @@ const TICKETS_PRICE = [
     {
         "code": "ODP",
         "name": "One Day Pass",
-        "price": 95
+        "price": 9.99
     },
     {
-        "code": "AAP",
-        "name": "All Access Pass",
-        "price": 274
+        "code": "MP",
+        "name": "Monthly Pass",
+        "price": 29.99
     }
 ]
 
