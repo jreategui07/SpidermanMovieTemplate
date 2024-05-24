@@ -172,17 +172,17 @@ footer .bi {
     gap: 20px;
 }
 
-.ticket-icon {
+.plan-icon {
     font-size: 80px;
 }
 
-.ticket-name {
+.plan-name {
     font-size: 20px;
     text-transform: uppercase;
     font-weight: bold;
 }
 
-.ticket-price {
+.plan-price {
     font-size: 40px;
     text-transform: uppercase;
     font-weight: bold;

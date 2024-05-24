@@ -43,9 +43,9 @@ const loadPlansAndPricing = () => {
 
         document.querySelector("#pricing-list").innerHTML += `
             <li>
-                <i class="ticket-icon bi ${ item.icon }"></i>
-                <a class="ticket-name">${ item.name }</a>
-                <a class="ticket-price">${ item.price }</a>
+                <i class="plan-icon bi ${ item.icon }"></i>
+                <a class="plan-name">${ item.name }</a>
+                <a class="plan-price">${ item.price }</a>
                 <div>${ itemDetailsHtml }</div>
                 <button class="btn-primary" onclick="window.location.href='purchase-plan.html'">${item.button_text}</button>
             </li>
