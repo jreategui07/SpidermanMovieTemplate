@@ -5,7 +5,7 @@ const ARTISTS = [
         "location": "Mann Village Theatre, Los Angeles",
         "show_time": "8:00 PM",
         "movie_status": "AVAILABLE",
-        "button_text": "BUY MOVIE",
+        "button_text": "WATCH MOVIE",
         "image_url": "img/tobey-maguire.jpg"
     },
     {
@@ -14,7 +14,7 @@ const ARTISTS = [
         "location": "Sony Pictures Studios, Culver City",
         "show_time": "7:00 PM",
         "movie_status": "AVAILABLE",
-        "button_text": "BUY MOVIE",
+        "button_text": "WATCH MOVIE",
         "image_url": "img/andrew-garfield.jpg"
     },
     {
@@ -23,7 +23,7 @@ const ARTISTS = [
         "location": "TCL Chinese Theatre, Los Angeles",
         "show_time": "7:00 PM",
         "movie_status": "AVAILABLE",
-        "button_text": "BUY MOVIE",
+        "button_text": "WATCH MOVIE",
         "image_url": "img/tom-holland.jpg"
     }
 ]
