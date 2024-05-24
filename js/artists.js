@@ -1,30 +1,30 @@
 const ARTISTS = [
     {
-        "artist": "Hozier",
-        "date": "Wednesday, September 20, 2023",
-        "location": "Place Bell, Laval",
+        "artist": "Tobey Maguire",
+        "date": "Friday, May 3, 2002",
+        "location": "Mann Village Theatre, Los Angeles",
         "show_time": "8:00 PM",
-        "tickets_status": "TICKETS ON SALE NOW!",
-        "button_text": "BUY TICKETS",
-        "image_url": "img/spiderman-artist.jpg"
+        "movie_status": "AVAILABLE",
+        "button_text": "BUY MOVIE",
+        "image_url": "img/tobey-maguire.jpg"
     },
     {
-        "artist": "Hozier",
-        "date": "Wednesday, September 20, 2023",
-        "location": "Place Bell, Laval",
-        "show_time": "8:00 PM",
-        "tickets_status": "TICKETS ON SALE NOW!",
-        "button_text": "BUY TICKETS",
-        "image_url": "img/spiderman-artist.jpg"
+        "artist": "Andrew Garfield",
+        "date": "Tuesday, July 3, 2012",
+        "location": "Sony Pictures Studios, Culver City",
+        "show_time": "7:00 PM",
+        "movie_status": "AVAILABLE",
+        "button_text": "BUY MOVIE",
+        "image_url": "img/andrew-garfield.jpg"
     },
     {
-        "artist": "Hozier",
-        "date": "Wednesday, September 20, 2023",
-        "location": "Place Bell, Laval",
-        "show_time": "8:00 PM",
-        "tickets_status": "TICKETS ON SALE NOW!",
-        "button_text": "BUY TICKETS",
-        "image_url": "img/spiderman-artist.jpg"
+        "artist": "Tom Holland",
+        "date": "Friday, July 7, 2017",
+        "location": "TCL Chinese Theatre, Los Angeles",
+        "show_time": "7:00 PM",
+        "movie_status": "AVAILABLE",
+        "button_text": "BUY MOVIE",
+        "image_url": "img/tom-holland.jpg"
     }
 ]
 
@@ -41,7 +41,7 @@ const loadArtistDetails = () => {
                     <a>Date: <strong>${ item.date }</strong></a>
                     <a>Location: <strong>${ item.location }</strong></a>
                     <a>Show Time: <strong>${ item.show_time }</strong></a>
-                    <a>Tickets Status: <strong>${ item.tickets_status }</strong></a>
+                    <a>Movie Status: <strong>${ item.movie_status }</strong></a>
                     <a>Location: <strong>${ item.location }</strong></a>
                     <button class="btn-secondary" onclick="window.location.href='purchase-ticket.html'">${ item.button_text }</button>
                 </div>
