@@ -69,7 +69,8 @@ const btnOrderSummary = () => {
         ticketPrice: ticketPrice.toFixed(NUMBER_OF_DECIMALS),
         subtotal: subtotal.toFixed(NUMBER_OF_DECIMALS),
         tax: tax.toFixed(NUMBER_OF_DECIMALS),
-        finalPrice: finalPrice.toFixed(NUMBER_OF_DECIMALS)
+        finalPrice: finalPrice.toFixed(NUMBER_OF_DECIMALS),
+        creditCard: FORM_DATA.creditCard
     }
 
     localStorage.setItem("ORDER_SUMMARY_IN_PROGRESS", JSON.stringify(ORDER_SUMMARY))
@@ -90,6 +91,12 @@ const showOrderSummary = (ORDER_SUMMARY) => {
     document.querySelector("#orderSummary").style.display = "flex";
     document.querySelector("#btn-pay").addEventListener("click", btnPayPressed)
     document.querySelector("#btn-reset").addEventListener("click", btnResetPressed)
+}
+
+const resumeForm = (ORDER_SUMMARY) => {
+    document.querySelector("#select-ticket-type").value = ORDER_SUMMARY.ticketType
+    document.querySelector("#txt-number-ticktes").value = ORDER_SUMMARY.numberTicktes
+    document.querySelector("#txt-credit-card").value = ORDER_SUMMARY.creditCard
 }
 
 const loadSelectTicketOption = () => {
@@ -115,6 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector("#orderSummary").style.display = "none";
     const ORDER_SUMMARY_IN_PROGRESS = JSON.parse(localStorage.getItem("ORDER_SUMMARY_IN_PROGRESS"))
     if (ORDER_SUMMARY_IN_PROGRESS !== null) {
+        resumeForm(ORDER_SUMMARY_IN_PROGRESS)
         showOrderSummary(ORDER_SUMMARY_IN_PROGRESS)
     }
 });
