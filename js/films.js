@@ -4,35 +4,35 @@ const FILMS = [
         "description": "A prestigious festival showcasing the best in international cinema.",
         "date": "October 1-7, 2024",
         "location": "Los Angeles, USA",
-        "image_url": "../img/spiderman-poster.jpg"
+        "image_url": "img/spiderman-poster.jpg"
     },
     {
         "name": "Hollywood Film Festival",
         "description": "A prestigious festival showcasing the best in international cinema.",
         "date": "October 1-7, 2024",
         "location": "Los Angeles, USA",
-        "image_url": "../img/spiderman-poster.jpg"
+        "image_url": "img/spiderman-poster.jpg"
     },
     {
         "name": "Hollywood Film Festival",
         "description": "A prestigious festival showcasing the best in international cinema.",
         "date": "October 1-7, 2024",
         "location": "Los Angeles, USA",
-        "image_url": "../img/spiderman-poster.jpg"
+        "image_url": "img/spiderman-poster.jpg"
     },
     {
         "name": "Hollywood Film Festival",
         "description": "A prestigious festival showcasing the best in international cinema.",
         "date": "October 1-7, 2024",
         "location": "Los Angeles, USA",
-        "image_url": "../img/spiderman-poster.jpg"
+        "image_url": "img/spiderman-poster.jpg"
     },
     {
         "name": "Hollywood Film Festival",
         "description": "A prestigious festival showcasing the best in international cinema.",
         "date": "October 1-7, 2024",
         "location": "Los Angeles, USA",
-        "image_url": "../img/spiderman-poster.jpg"
+        "image_url": "img/spiderman-poster.jpg"
     }
 ]
 

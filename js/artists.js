@@ -6,7 +6,7 @@ const ARTISTS = [
         "show_time": "8:00 PM",
         "tickets_status": "TICKETS ON SALE NOW!",
         "button_text": "BUY TICKETS",
-        "image_url": "../img/spiderman-artist.jpg"
+        "image_url": "img/spiderman-artist.jpg"
     },
     {
         "artist": "Hozier",
@@ -15,7 +15,7 @@ const ARTISTS = [
         "show_time": "8:00 PM",
         "tickets_status": "TICKETS ON SALE NOW!",
         "button_text": "BUY TICKETS",
-        "image_url": "../img/spiderman-artist.jpg"
+        "image_url": "img/spiderman-artist.jpg"
     },
     {
         "artist": "Hozier",
@@ -24,7 +24,7 @@ const ARTISTS = [
         "show_time": "8:00 PM",
         "tickets_status": "TICKETS ON SALE NOW!",
         "button_text": "BUY TICKETS",
-        "image_url": "../img/spiderman-artist.jpg"
+        "image_url": "img/spiderman-artist.jpg"
     }
 ]
 
