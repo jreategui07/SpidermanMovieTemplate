@@ -24,7 +24,7 @@ const SUBCRIPTIONS_TYPE = [
 ]
 
 
-const loadticketsAndPricing = () => {
+const loadPlansAndPricing = () => {
     for (let i = 0; i < SUBCRIPTIONS_TYPE.length; i++) {
         const item = SUBCRIPTIONS_TYPE[i];
         const liNode = document.createElement("li")
@@ -54,5 +54,5 @@ const loadticketsAndPricing = () => {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    loadticketsAndPricing()
+    loadPlansAndPricing()
 });
