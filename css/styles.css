@@ -138,7 +138,6 @@ footer .bi {
 #films-list > li {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     flex-wrap: wrap;
     width: 300px;
     background-color: red;
